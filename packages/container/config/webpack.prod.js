@@ -17,7 +17,7 @@ const prodConfig = {
             name: 'container', //no uses as host 
             remotes: {
                 //makreting: `marketing@${domain}/marketing/remoteEntry.js`,
-                marketing: `marketing@http://${domain}/marketing/latest/remoteEntry.js`,
+                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
             },
             shared: packageJosn.dependencies
         })
