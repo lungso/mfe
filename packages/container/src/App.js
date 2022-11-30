@@ -12,14 +12,14 @@ import Header from './components/Header';
 //testing2 
 //testing3
 
-const generateClassNmae = createGenerateClassName({
+const generateClassName = createGenerateClassName({
     productionPrefix: 'co',
 });
 
 export default () => {
     return (
         <BrowserRouter>
-            <StylesProvider generateClassName={generateClassNmae}>
+            <StylesProvider generateClassName={generateClassName}>
             <div>
                 <Header/>
                 <MarketingApp/>
