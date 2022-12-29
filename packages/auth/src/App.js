@@ -6,25 +6,30 @@ import {
     createGenerateClassName
 } from '@material-ui/core/styles';
 
-import Landing from './components/Landing';
-import Pricing from './components/Pricing';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 
 const generateClassName = createGenerateClassName({
-    productionPrefix: 'ma',
+    productionPrefix: 'au',
 });
 
 // create a memory history in 
-export default ({ history}) => {
+export default ({ history, onSignIn }) => {
     return <div>
         <StylesProvider generateClassName={generateClassName}>
             {/* <BrowserRouter> not going to use browser history but memory history */}
             <Router history={history}>
                 <Switch>
-                    <Route exact path="/pricing" component={Pricing} />
-                    <Route path= "/" component={Landing} />
+                    <Route path="/auth/signin">
+                        <Signin onSignIn={onSignIn}/>
+                    </Route>
+                    <Route path="/auth/signup">
+                        <Signup onSignIn={onSignIn}/>
+                    </Route>
                 </Switch>
             </Router>
             {/* </BrowserRouter> */}
         </StylesProvider>        
     </div>
 };
+
